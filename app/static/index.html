@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support Agent</title>
+<style>
+  :root {
+    --bg: #f7f7f5; --panel: #fff; --text: #1d1d1b; --muted: #6b6b66; --line: #e4e4df;
+    --accent: #2f5bd3; --accent-soft: #e9eefb; --warn: #9a6700;
+    --r-policy: #2f7d4f; --r-order: #2f5bd3; --r-both: #7a4fc9; --r-none: #6b6b66;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #151514; --panel: #1f1f1d; --text: #ecece8; --muted: #9d9d97; --line: #33332f;
+      --accent: #7f9ef0; --accent-soft: #252d44; --warn: #e3b341;
+      --r-policy: #5cc488; --r-order: #7f9ef0; --r-both: #b394f0; --r-none: #9d9d97;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  .wrap { max-width: 1150px; margin: 0 auto; padding: 24px 16px; display: grid; grid-template-columns: 1fr 300px; gap: 20px; }
+  @media (max-width: 860px) { .wrap { grid-template-columns: 1fr; } }
+  header { grid-column: 1 / -1; display: flex; gap: 12px; align-items: baseline; flex-wrap: wrap; }
+  h1 { font-size: 20px; margin: 0; }
+  .badge { font-size: 12px; padding: 2px 8px; border-radius: 99px; background: var(--accent-soft); color: var(--accent); }
+  .badge.demo { color: var(--warn); }
+  .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 16px; }
+  h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); margin: 0 0 10px; }
+  .chat { display: flex; flex-direction: column; min-height: 72vh; }
+  .log { flex: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 14px; padding-bottom: 12px; }
+  .msg { max-width: 92%; }
+  .msg.user { align-self: flex-end; background: var(--accent-soft); padding: 8px 12px; border-radius: 10px; }
+  .route { display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: .03em; text-transform: uppercase;
+           padding: 1px 7px; border-radius: 4px; border: 1px solid currentColor; margin-right: 6px; }
+  .route.policy_search { color: var(--r-policy); } .route.order_status { color: var(--r-order); }
+  .route.both { color: var(--r-both); } .route.none { color: var(--r-none); }
+  .meta { font-size: 12px; color: var(--muted); }
+  .answer { margin: 4px 0; }
+  .tag { color: var(--r-policy); font-size: 12px; font-weight: 600; }
+  details { font-size: 13px; color: var(--muted); }
+  details pre { white-space: pre-wrap; word-break: break-word; background: var(--bg); padding: 8px; border-radius: 6px; font-size: 12px; max-height: 240px; overflow: auto; }
+  form { display: flex; gap: 8px; border-top: 1px solid var(--line); padding-top: 12px; }
+  input { flex: 1; font: inherit; padding: 10px 12px; border-radius: 8px; border: 1px solid var(--line); background: var(--bg); color: var(--text); }
+  button { font: inherit; cursor: pointer; border-radius: 8px; border: 1px solid var(--line); background: var(--panel); color: var(--text); padding: 5px 10px; }
+  button.primary { background: var(--accent); border-color: var(--accent); color: #fff; padding: 8px 16px; }
+  button:disabled { opacity: .5; }
+  .examples button { display: block; width: 100%; text-align: left; margin-bottom: 6px; font-size: 13px; }
+  .orders { display: flex; flex-wrap: wrap; gap: 6px; }
+  .orders button { font-size: 12px; padding: 3px 7px; }
+  .stats div { display: flex; justify-content: space-between; font-size: 13px; padding: 3px 0; }
+  aside .panel + .panel { margin-top: 16px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Kestrel Support Agent</h1>
+    <span id="status" class="badge">loading…</span>
+    <span class="meta">Every answer shows the route taken: policy search, order lookup, both, or none.</span>
+  </header>
+
+  <main class="panel chat">
+    <div id="log" class="log"></div>
+    <form id="form">
+      <input id="q" placeholder="Ask about an order or our policies…" autocomplete="off" maxlength="2000" required>
+      <button class="primary" id="send">Send</button>
+    </form>
+  </main>
+
+  <aside>
+    <div class="panel examples">
+      <h2>Try</h2>
+      <button>What is your return policy?</button>
+      <button>Where is order 1019?</button>
+      <button>Order 1010 arrived damaged, what can I do?</button>
+      <button>My order 1014 is late, is it lost?</button>
+      <button>Where is my order?</button>
+      <button>What's the weather in Berlin?</button>
+    </div>
+    <div class="panel">
+      <h2>Sample orders</h2>
+      <div id="orders" class="orders"></div>
+    </div>
+    <div class="panel">
+      <h2>Routing log</h2>
+      <div id="stats" class="stats"></div>
+      <p class="meta"><a href="/logs" target="_blank">/logs</a> · <a href="/docs" target="_blank">API docs</a></p>
+    </div>
+  </aside>
+</div>
+
+<script>
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const history = [];
+const LABEL = { policy_search: "policy search", order_status: "order lookup", both: "both", none: "no tool" };
+
+async function api(path, opts) {
+  const r = await fetch(path, opts);
+  const body = await r.json().catch(() => ({}));
+  if (!r.ok) throw new Error(body.detail?.[0]?.msg || body.detail || `Request failed (${r.status})`);
+  return body;
+}
+
+async function refreshStats() {
+  const s = await api("/logs/stats");
+  $("#stats").innerHTML = Object.entries(s.by_route).map(([k, v]) =>
+    `<div><span class="route ${k}">${LABEL[k]}</span><b>${v}</b></div>`).join("") +
+    `<div class="meta"><span>total ${s.total}</span><span>avg ${s.avg_latency_ms} ms</span></div>`;
+}
+
+function add(cls, html) {
+  const d = document.createElement("div");
+  d.className = `msg ${cls}`;
+  d.innerHTML = html;
+  $("#log").appendChild(d);
+  d.scrollIntoView({ behavior: "smooth", block: "end" });
+  return d;
+}
+
+function render(r) {
+  const answer = esc(r.answer).replace(/\[([A-Z][^\]]{2,60})\]/g, '<span class="tag">[$1]</span>');
+  const mode = { groq: "LLM", demo: "demo (rule-based)", fallback: "fallback: LLM failed" }[r.mode];
+  const tools = r.tool_calls.length
+    ? `<details><summary>${r.tool_calls.length} tool call(s): ${r.tool_calls.map((c) => esc(c.name)).join(", ")}</summary>
+       <pre>${esc(JSON.stringify(r.tool_calls.map(({ name, arguments: a, ok, result }) => ({ name, arguments: a, ok, result })), null, 2))}</pre></details>`
+    : "";
+  return `<div><span class="route ${r.route}">${LABEL[r.route]}</span><span class="meta">${mode} · log #${r.log_id}</span></div>
+          <div class="answer">${answer}</div>${tools}`;
+}
+
+async function send(text) {
+  add("user", esc(text));
+  const bot = add("bot", '<span class="meta">Thinking…</span>');
+  $("#send").disabled = true;
+  try {
+    const r = await api("/chat", {
+      method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ message: text, history: history.slice(-6) }),
+    });
+    bot.innerHTML = render(r);
+    history.push({ role: "user", content: text }, { role: "assistant", content: r.answer });
+    refreshStats();
+  } catch (e) {
+    bot.innerHTML = `<span class="meta">Error: ${esc(e.message)}</span>`;
+  } finally {
+    $("#send").disabled = false;
+  }
+}
+
+$("#form").addEventListener("submit", (e) => {
+  e.preventDefault();
+  const t = $("#q").value.trim();
+  if (t) { $("#q").value = ""; send(t); }
+});
+document.querySelector(".examples").addEventListener("click", (e) => { if (e.target.tagName === "BUTTON") send(e.target.textContent); });
+$("#orders").addEventListener("click", (e) => { const id = e.target.dataset?.id; if (id) send(`Where is order ${id}?`); });
+
+(async () => {
+  const h = await api("/health");
+  $("#status").textContent = h.demo_mode ? "Demo mode: rule-based agent, no API key" : `Agent: ${h.agent}`;
+  $("#status").classList.toggle("demo", h.demo_mode);
+  const orders = await api("/orders");
+  $("#orders").innerHTML = orders.map((o) => `<button data-id="${o.order_id}" title="${o.status}">${o.order_id} · ${o.status.replace(/_/g, " ")}</button>`).join("");
+  refreshStats();
+  add("bot", '<div class="answer">Hi! I can check an order\'s status or answer questions about returns, shipping, refunds and more.</div>');
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,727 @@
+[
+  {
+    "id": 1001,
+    "customer_name": "Max Fischer",
+    "email": "max.fischer@example.com",
+    "status": "refunded",
+    "placed_at": "2026-08-12",
+    "estimated_delivery": null,
+    "delivered_at": "2026-08-14",
+    "carrier": "Royal Mail",
+    "tracking_number": "RO3412609344",
+    "shipping_country": "GB",
+    "total": 358.0,
+    "currency": "EUR",
+    "note": "Refunded to original payment method.",
+    "items": [
+      {
+        "sku": "SLP-DWN",
+        "name": "Aurora Down Sleeping Bag",
+        "quantity": 2,
+        "unit_price": 179.0
+      }
+    ]
+  },
+  {
+    "id": 1002,
+    "customer_name": "Hanna Kowalski",
+    "email": "hanna.kowalski@example.com",
+    "status": "returned",
+    "placed_at": "2026-08-22",
+    "estimated_delivery": null,
+    "delivered_at": "2026-08-28",
+    "carrier": "InPost",
+    "tracking_number": "IN5560204234",
+    "shipping_country": "PL",
+    "total": 298.0,
+    "currency": "EUR",
+    "note": "Return received at warehouse; refund being processed.",
+    "items": [
+      {
+        "sku": "BPK-45",
+        "name": "Traverse 45L Backpack",
+        "quantity": 2,
+        "unit_price": 149.0
+      }
+    ]
+  },
+  {
+    "id": 1003,
+    "customer_name": "Isla Murray",
+    "email": "isla.murray@example.com",
+    "status": "refunded",
+    "placed_at": "2026-08-27",
+    "estimated_delivery": null,
+    "delivered_at": "2026-08-30",
+    "carrier": "Posten",
+    "tracking_number": "PO8902738897",
+    "shipping_country": "NO",
+    "total": 195.5,
+    "currency": "EUR",
+    "note": "Refunded to original payment method.",
+    "items": [
+      {
+        "sku": "BTL-1L",
+        "name": "Insulated Bottle 1L",
+        "quantity": 1,
+        "unit_price": 27.5
+      },
+      {
+        "sku": "MAT-INF",
+        "name": "Airloft Sleeping Mat",
+        "quantity": 1,
+        "unit_price": 89.0
+      },
+      {
+        "sku": "FLC-MID",
+        "name": "Midlayer Fleece",
+        "quantity": 1,
+        "unit_price": 79.0
+      }
+    ]
+  },
+  {
+    "id": 1004,
+    "customer_name": "Amara Okafor",
+    "email": "amara.okafor@example.com",
+    "status": "delivered",
+    "placed_at": "2026-08-29",
+    "estimated_delivery": null,
+    "delivered_at": "2026-09-01",
+    "carrier": "DHL",
+    "tracking_number": "DH2796035739",
+    "shipping_country": "DE",
+    "total": 336.3,
+    "currency": "EUR",
+    "note": null,
+    "items": [
+      {
+        "sku": "TNT-2P",
+        "name": "Ridgeline 2-Person Tent",
+        "quantity": 1,
+        "unit_price": 229.0
+      },
+      {
+        "sku": "BTL-1L",
+        "name": "Insulated Bottle 1L",
+        "quantity": 1,
+        "unit_price": 27.5
+      },
+      {
+        "sku": "STV-GAS",
+        "name": "Pocket Gas Stove",
+        "quantity": 2,
+        "unit_price": 39.9
+      }
+    ]
+  },
+  {
+    "id": 1005,
+    "customer_name": "Chloé Martin",
+    "email": "chloe.martin@example.com",
+    "status": "delivered",
+    "placed_at": "2026-08-30",
+    "estimated_delivery": null,
+    "delivered_at": "2026-09-01",
+    "carrier": "SEUR",
+    "tracking_number": "SE7395047810",
+    "shipping_country": "ES",
+    "total": 464.5,
+    "currency": "EUR",
+    "note": null,
+    "items": [
+      {
+        "sku": "SLP-DWN",
+        "name": "Aurora Down Sleeping Bag",
+        "quantity": 2,
+        "unit_price": 179.0
+      },
+      {
+        "sku": "FLC-MID",
+        "name": "Midlayer Fleece",
+        "quantity": 1,
+        "unit_price": 79.0
+      },
+      {
+        "sku": "BTL-1L",
+        "name": "Insulated Bottle 1L",
+        "quantity": 1,
+        "unit_price": 27.5
+      }
+    ]
+  },
+  {
+    "id": 1006,
+    "customer_name": "Sofia Rossi",
+    "email": "sofia.rossi@example.com",
+    "status": "delivered",
+    "placed_at": "2026-08-31",
+    "estimated_delivery": null,
+    "delivered_at": "2026-09-02",
+    "carrier": "Colissimo",
+    "tracking_number": "CO9859611191",
+    "shipping_country": "FR",
+    "total": 447.0,
+    "currency": "EUR",
+    "note": null,
+    "items": [
+      {
+        "sku": "BPK-45",
+        "name": "Traverse 45L Backpack",
+        "quantity": 1,
+        "unit_price": 149.0
+      },
+      {
+        "sku": "SLP-DWN",
+        "name": "Aurora Down Sleeping Bag",
+        "quantity": 1,
+        "unit_price": 179.0
+      },
+      {
+        "sku": "POL-CRB",
+        "name": "Carbon Trekking Poles",
+        "quantity": 1,
+        "unit_price": 119.0
+      }
+    ]
+  },
+  {
+    "id": 1007,
+    "customer_name": "Noah Jansen",
+    "email": "noah.jansen@example.com",
+    "status": "delivered",
+    "placed_at": "2026-09-05",
+    "estimated_delivery": null,
+    "delivered_at": "2026-09-11",
+    "carrier": "BRT",
+    "tracking_number": "BR2048386555",
+    "shipping_country": "IT",
+    "total": 354.0,
+    "currency": "EUR",
+    "note": null,
+    "items": [
+      {
+        "sku": "BTS-HIK",
+        "name": "Summit Hiking Boots",
+        "quantity": 1,
+        "unit_price": 165.0
+      },
+      {
+        "sku": "JKT-SHL",
+        "name": "Stormshell Rain Jacket",
+        "quantity": 1,
+        "unit_price": 189.0
+      }
+    ]
+  },
+  {
+    "id": 1008,
+    "customer_name": "Daniel Costa",
+    "email": "daniel.costa@example.com",
+    "status": "delayed",
+    "placed_at": "2026-09-12",
+    "estimated_delivery": "2026-09-17",
+    "delivered_at": null,
+    "carrier": "Colissimo",
+    "tracking_number": "CO9202430345",
+    "shipping_country": "FR",
+    "total": 34.85,
+    "currency": "EUR",
+    "note": "Address could not be verified by the carrier; awaiting confirmation.",
+    "items": [
+      {
+        "sku": "GLV-WTR",
+        "name": "Thermal Gloves",
+        "quantity": 1,
+        "unit_price": 29.9
+      }
+    ]
+  },
+  {
+    "id": 1009,
+    "customer_name": "Ethan Walsh",
+    "email": "ethan.walsh@example.com",
+    "status": "delayed",
+    "placed_at": "2026-09-12",
+    "estimated_delivery": "2026-09-17",
+    "delivered_at": null,
+    "carrier": "SEUR",
+    "tracking_number": "SE3790331461",
+    "shipping_country": "ES",
+    "total": 176.5,
+    "currency": "EUR",
+    "note": "Address could not be verified by the carrier; awaiting confirmation.",
+    "items": [
+      {
+        "sku": "BPK-45",
+        "name": "Traverse 45L Backpack",
+        "quantity": 1,
+        "unit_price": 149.0
+      },
+      {
+        "sku": "BTL-1L",
+        "name": "Insulated Bottle 1L",
+        "quantity": 1,
+        "unit_price": 27.5
+      }
+    ]
+  },
+  {
+    "id": 1010,
+    "customer_name": "Liam Becker",
+    "email": "liam.becker@example.com",
+    "status": "delivered",
+    "placed_at": "2026-09-13",
+    "estimated_delivery": null,
+    "delivered_at": "2026-09-16",
+    "carrier": "PostNL",
+    "tracking_number": "PO9790005680",
+    "shipping_country": "NL",
+    "total": 407.8,
+    "currency": "EUR",
+    "note": null,
+    "items": [
+      {
+        "sku": "GLV-WTR",
+        "name": "Thermal Gloves",
+        "quantity": 2,
+        "unit_price": 29.9
+      },
+      {
+        "sku": "POL-CRB",
+        "name": "Carbon Trekking Poles",
+        "quantity": 1,
+        "unit_price": 119.0
+      },
+      {
+        "sku": "TNT-2P",
+        "name": "Ridgeline 2-Person Tent",
+        "quantity": 1,
+        "unit_price": 229.0
+      }
+    ]
+  },
+  {
+    "id": 1011,
+    "customer_name": "Ingrid Nilsen",
+    "email": "ingrid.nilsen@example.com",
+    "status": "delivered",
+    "placed_at": "2026-09-14",
+    "estimated_delivery": null,
+    "delivered_at": "2026-09-19",
+    "carrier": "An Post",
+    "tracking_number": "AN3623879480",
+    "shipping_country": "IE",
+    "total": 318.0,
+    "currency": "EUR",
+    "note": null,
+    "items": [
+      {
+        "sku": "TNT-2P",
+        "name": "Ridgeline 2-Person Tent",
+        "quantity": 1,
+        "unit_price": 229.0
+      },
+      {
+        "sku": "MAT-INF",
+        "name": "Airloft Sleeping Mat",
+        "quantity": 1,
+        "unit_price": 89.0
+      }
+    ]
+  },
+  {
+    "id": 1012,
+    "customer_name": "Mateo García",
+    "email": "mateo.garcía@example.com",
+    "status": "delivered",
+    "placed_at": "2026-09-14",
+    "estimated_delivery": null,
+    "delivered_at": "2026-09-19",
+    "carrier": "PostNord",
+    "tracking_number": "PO9352341718",
+    "shipping_country": "SE",
+    "total": 208.0,
+    "currency": "EUR",
+    "note": null,
+    "items": [
+      {
+        "sku": "POL-CRB",
+        "name": "Carbon Trekking Poles",
+        "quantity": 1,
+        "unit_price": 119.0
+      },
+      {
+        "sku": "MAT-INF",
+        "name": "Airloft Sleeping Mat",
+        "quantity": 1,
+        "unit_price": 89.0
+      }
+    ]
+  },
+  {
+    "id": 1013,
+    "customer_name": "Oliver Hughes",
+    "email": "oliver.hughes@example.com",
+    "status": "delivered",
+    "placed_at": "2026-09-15",
+    "estimated_delivery": null,
+    "delivered_at": "2026-09-20",
+    "carrier": "InPost",
+    "tracking_number": "IN7658142303",
+    "shipping_country": "PL",
+    "total": 447.0,
+    "currency": "EUR",
+    "note": null,
+    "items": [
+      {
+        "sku": "MAT-INF",
+        "name": "Airloft Sleeping Mat",
+        "quantity": 1,
+        "unit_price": 89.0
+      },
+      {
+        "sku": "SLP-DWN",
+        "name": "Aurora Down Sleeping Bag",
+        "quantity": 2,
+        "unit_price": 179.0
+      }
+    ]
+  },
+  {
+    "id": 1014,
+    "customer_name": "Nora Lindqvist",
+    "email": "nora.lindqvist@example.com",
+    "status": "delayed",
+    "placed_at": "2026-09-17",
+    "estimated_delivery": "2026-09-22",
+    "delivered_at": null,
+    "carrier": "BRT",
+    "tracking_number": "BR5265385103",
+    "shipping_country": "IT",
+    "total": 202.9,
+    "currency": "EUR",
+    "note": "Carrier reported a sorting-centre backlog.",
+    "items": [
+      {
+        "sku": "HDL-400",
+        "name": "Beam 400 Headlamp",
+        "quantity": 1,
+        "unit_price": 34.9
+      },
+      {
+        "sku": "MAT-INF",
+        "name": "Airloft Sleeping Mat",
+        "quantity": 1,
+        "unit_price": 89.0
+      },
+      {
+        "sku": "FLC-MID",
+        "name": "Midlayer Fleece",
+        "quantity": 1,
+        "unit_price": 79.0
+      }
+    ]
+  },
+  {
+    "id": 1015,
+    "customer_name": "Leila Haddad",
+    "email": "leila.haddad@example.com",
+    "status": "cancelled",
+    "placed_at": "2026-09-21",
+    "estimated_delivery": null,
+    "delivered_at": null,
+    "carrier": null,
+    "tracking_number": null,
+    "shipping_country": "SE",
+    "total": 72.35,
+    "currency": "EUR",
+    "note": "Cancelled by customer within 1 hour of ordering.",
+    "items": [
+      {
+        "sku": "BTL-1L",
+        "name": "Insulated Bottle 1L",
+        "quantity": 1,
+        "unit_price": 27.5
+      },
+      {
+        "sku": "STV-GAS",
+        "name": "Pocket Gas Stove",
+        "quantity": 1,
+        "unit_price": 39.9
+      }
+    ]
+  },
+  {
+    "id": 1016,
+    "customer_name": "Finn O'Brien",
+    "email": "finn.obrien@example.com",
+    "status": "out_for_delivery",
+    "placed_at": "2026-09-23",
+    "estimated_delivery": "2026-09-26",
+    "delivered_at": null,
+    "carrier": "PostNord",
+    "tracking_number": "PO7563180069",
+    "shipping_country": "DK",
+    "total": 44.85,
+    "currency": "EUR",
+    "note": null,
+    "items": [
+      {
+        "sku": "STV-GAS",
+        "name": "Pocket Gas Stove",
+        "quantity": 1,
+        "unit_price": 39.9
+      }
+    ]
+  },
+  {
+    "id": 1017,
+    "customer_name": "Maya Cohen",
+    "email": "maya.cohen@example.com",
+    "status": "out_for_delivery",
+    "placed_at": "2026-09-23",
+    "estimated_delivery": "2026-09-26",
+    "delivered_at": null,
+    "carrier": "PostNL",
+    "tracking_number": "PO1618979930",
+    "shipping_country": "BE",
+    "total": 168.0,
+    "currency": "EUR",
+    "note": null,
+    "items": [
+      {
+        "sku": "MAT-INF",
+        "name": "Airloft Sleeping Mat",
+        "quantity": 1,
+        "unit_price": 89.0
+      },
+      {
+        "sku": "FLC-MID",
+        "name": "Midlayer Fleece",
+        "quantity": 1,
+        "unit_price": 79.0
+      }
+    ]
+  },
+  {
+    "id": 1018,
+    "customer_name": "Tomás Silva",
+    "email": "tomas.silva@example.com",
+    "status": "cancelled",
+    "placed_at": "2026-09-24",
+    "estimated_delivery": null,
+    "delivered_at": null,
+    "carrier": null,
+    "tracking_number": null,
+    "shipping_country": "IE",
+    "total": 32.45,
+    "currency": "EUR",
+    "note": "Cancelled by customer within 1 hour of ordering.",
+    "items": [
+      {
+        "sku": "BTL-1L",
+        "name": "Insulated Bottle 1L",
+        "quantity": 1,
+        "unit_price": 27.5
+      }
+    ]
+  },
+  {
+    "id": 1019,
+    "customer_name": "Aisha Rahman",
+    "email": "aisha.rahman@example.com",
+    "status": "shipped",
+    "placed_at": "2026-09-25",
+    "estimated_delivery": "2026-10-02",
+    "delivered_at": null,
+    "carrier": "Swiss Post",
+    "tracking_number": "SW2892478001",
+    "shipping_country": "CH",
+    "total": 268.9,
+    "currency": "EUR",
+    "note": null,
+    "items": [
+      {
+        "sku": "TNT-2P",
+        "name": "Ridgeline 2-Person Tent",
+        "quantity": 1,
+        "unit_price": 229.0
+      },
+      {
+        "sku": "STV-GAS",
+        "name": "Pocket Gas Stove",
+        "quantity": 1,
+        "unit_price": 39.9
+      }
+    ]
+  },
+  {
+    "id": 1020,
+    "customer_name": "Elena Petrova",
+    "email": "elena.petrova@example.com",
+    "status": "shipped",
+    "placed_at": "2026-09-25",
+    "estimated_delivery": "2026-10-02",
+    "delivered_at": null,
+    "carrier": "Royal Mail",
+    "tracking_number": "RO5346777758",
+    "shipping_country": "GB",
+    "total": 49.85,
+    "currency": "EUR",
+    "note": null,
+    "items": [
+      {
+        "sku": "STV-GAS",
+        "name": "Pocket Gas Stove",
+        "quantity": 1,
+        "unit_price": 39.9
+      }
+    ]
+  },
+  {
+    "id": 1021,
+    "customer_name": "Freya Andersen",
+    "email": "freya.andersen@example.com",
+    "status": "processing",
+    "placed_at": "2026-09-25",
+    "estimated_delivery": "2026-09-29",
+    "delivered_at": null,
+    "carrier": null,
+    "tracking_number": null,
+    "shipping_country": "NL",
+    "total": 89.0,
+    "currency": "EUR",
+    "note": null,
+    "items": [
+      {
+        "sku": "MAT-INF",
+        "name": "Airloft Sleeping Mat",
+        "quantity": 1,
+        "unit_price": 89.0
+      }
+    ]
+  },
+  {
+    "id": 1022,
+    "customer_name": "Jonas Weber",
+    "email": "jonas.weber@example.com",
+    "status": "shipped",
+    "placed_at": "2026-09-25",
+    "estimated_delivery": "2026-09-29",
+    "delivered_at": null,
+    "carrier": "DHL",
+    "tracking_number": "DH2615892810",
+    "shipping_country": "AT",
+    "total": 165.0,
+    "currency": "EUR",
+    "note": null,
+    "items": [
+      {
+        "sku": "BTS-HIK",
+        "name": "Summit Hiking Boots",
+        "quantity": 1,
+        "unit_price": 165.0
+      }
+    ]
+  },
+  {
+    "id": 1023,
+    "customer_name": "Lukas Schmidt",
+    "email": "lukas.schmidt@example.com",
+    "status": "shipped",
+    "placed_at": "2026-09-25",
+    "estimated_delivery": "2026-10-02",
+    "delivered_at": null,
+    "carrier": "Posten",
+    "tracking_number": "PO5526864997",
+    "shipping_country": "NO",
+    "total": 198.0,
+    "currency": "EUR",
+    "note": null,
+    "items": [
+      {
+        "sku": "POL-CRB",
+        "name": "Carbon Trekking Poles",
+        "quantity": 1,
+        "unit_price": 119.0
+      },
+      {
+        "sku": "FLC-MID",
+        "name": "Midlayer Fleece",
+        "quantity": 1,
+        "unit_price": 79.0
+      }
+    ]
+  },
+  {
+    "id": 1024,
+    "customer_name": "Zofia Nowak",
+    "email": "zofia.nowak@example.com",
+    "status": "processing",
+    "placed_at": "2026-09-25",
+    "estimated_delivery": "2026-09-29",
+    "delivered_at": null,
+    "carrier": null,
+    "tracking_number": null,
+    "shipping_country": "PT",
+    "total": 271.5,
+    "currency": "EUR",
+    "note": null,
+    "items": [
+      {
+        "sku": "BTL-1L",
+        "name": "Insulated Bottle 1L",
+        "quantity": 1,
+        "unit_price": 27.5
+      },
+      {
+        "sku": "FLC-MID",
+        "name": "Midlayer Fleece",
+        "quantity": 1,
+        "unit_price": 79.0
+      },
+      {
+        "sku": "BTS-HIK",
+        "name": "Summit Hiking Boots",
+        "quantity": 1,
+        "unit_price": 165.0
+      }
+    ]
+  },
+  {
+    "id": 1025,
+    "customer_name": "Hugo Laurent",
+    "email": "hugo.laurent@example.com",
+    "status": "processing",
+    "placed_at": "2026-09-26",
+    "estimated_delivery": "2026-09-30",
+    "delivered_at": null,
+    "carrier": null,
+    "tracking_number": null,
+    "shipping_country": "DE",
+    "total": 726.0,
+    "currency": "EUR",
+    "note": null,
+    "items": [
+      {
+        "sku": "TNT-2P",
+        "name": "Ridgeline 2-Person Tent",
+        "quantity": 2,
+        "unit_price": 229.0
+      },
+      {
+        "sku": "FLC-MID",
+        "name": "Midlayer Fleece",
+        "quantity": 1,
+        "unit_price": 79.0
+      },
+      {
+        "sku": "JKT-SHL",
+        "name": "Stormshell Rain Jacket",
+        "quantity": 1,
+        "unit_price": 189.0
+      }
+    ]
+  }
+]

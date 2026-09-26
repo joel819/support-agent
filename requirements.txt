@@ -1,0 +1,14 @@
+# CPU-only PyTorch (~200 MB instead of ~2.5 GB of CUDA libraries)
+--extra-index-url https://download.pytorch.org/whl/cpu
+
+fastapi==0.141.1
+uvicorn[standard]==0.46.0
+SQLAlchemy==2.1.1
+pydantic==2.13.3
+pydantic-settings==2.14.0
+chromadb==1.5.9
+torch==2.14.0
+sentence-transformers==6.1.0
+openai==3.19.2
+httpx==0.28.1
+pytest==9.1.1
