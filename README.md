@@ -2,12 +2,18 @@
 
 A customer support agent that decides for each message whether to search a policy document (RAG), look up an order (tool calling), do both, or do neither. It logs the path it took on every query, and it runs locally for free.
 
+## Screenshots
+
+Three questions through the live agent. Each answer shows its route badge, and the tool calls can be expanded to see the exact arguments and results. The side panel has the sample orders and live routing stats.
+
+![Chat UI showing a policy answer, a combined order-plus-policy answer with expanded tool calls, and an order lookup](docs/screenshots/chat.png)
+
 ## What it does
 
 - **Two tools:**
   - `search_policy(query)` does semantic search over a store policy document, embedded locally and stored in ChromaDB.
   - `get_order_status(order_id)` looks up an order in a SQLite database of sample orders.
-- **The model chooses the tools.** Llama 3.3 70B on Groq's free tier picks which tools to call using OpenAI-style tool calling. It can call both in one turn, for example "order 1010 arrived damaged, what can I do?".
+- **The model chooses the tools.** an open model (gpt-oss-120b) on Groq's free tier picks which tools to call using OpenAI-style tool calling. It can call both in one turn, for example "order 1010 arrived damaged, what can I do?".
 - **Every query is logged** with its route (`policy_search`, `order_status`, `both` or `none`), the tools called and their arguments, the latency, the mode (`groq`, `demo` or `fallback`) and any error. Logs go to a SQLite table (browse at `/logs`, summary at `/logs/stats`) and to one JSON line on stdout.
 - **The route is derived from the tools actually called.** It is not the model's own claim about what it did, so the log can't disagree with what happened.
 - **Guardrails:**

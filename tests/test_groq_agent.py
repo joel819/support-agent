@@ -41,7 +41,7 @@ def test_uses_groq_endpoint_and_model(agent, db, monkeypatch):
     monkeypatch.setattr(agent.client.chat.completions, "create", script)
     agent.run(db, "hi", [])
     assert str(agent.client.base_url).startswith("https://api.groq.com/openai/v1")
-    assert script.requests[0]["model"] == "llama-3.3-70b-versatile"
+    assert script.requests[0]["model"] == "openai/gpt-oss-120b"
     names = {t["function"]["name"] for t in script.requests[0]["tools"]}
     assert names == {"search_policy", "get_order_status"}
 

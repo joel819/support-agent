@@ -16,7 +16,7 @@ class Settings(BaseSettings):
     # LLM (Groq free tier via the OpenAI-compatible API)
     groq_api_key: str = ""
     groq_base_url: str = "https://api.groq.com/openai/v1"
-    groq_model: str = "llama-3.3-70b-versatile"
+    groq_model: str = "openai/gpt-oss-120b"
     llm_timeout_seconds: float = 30.0
     llm_temperature: float = 0.0
     max_agent_steps: int = 4  # max LLM turns per question (tool rounds + final answer)
